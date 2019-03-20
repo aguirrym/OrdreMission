@@ -9,5 +9,7 @@ namespace GestionDordreDeMission.API.Data
         
 
         public DbSet<Employee> Employees {get; set;}
+
+        public DbSet<User> Users {get; set;}
     }
 }
