@@ -1,0 +1,26 @@
+<form #registerForm="ngForm" (ngSubmit)="register()">
+  <h2 class="text-centre text-primary">Inscription</h2>
+  <hr>
+
+  <div class="form-group">
+    <input type="text" class="form-control" required name="Nom" [(ngModel)]="model.Nom" placeholder="Nom">
+  </div>
+
+  <div class="form-group">
+    <label for="votreposte">Selectionnez votre poste: </label>
+    <select class="form-control" id="votreposte">
+    <option *ngFor="let employee of employeesFromHome" [value]="employee">{{employee.PostEmp}}</option>
+  </select>
+  </div>
+
+  <div class="form-group text-centre">
+    <input type="password" class="form-control" name="Motdepasse" [(ngModel)]="model.Motdepasse" required placeholder="mot de passe">
+  </div>
+
+  <div class="form-group text-centre">
+    <button class="btn btn-success mr-2" type="submit">Inscription</button>
+    <button class="btn btn-danger" type="button" (click)="cancel()">Annuler</button>
+
+  </div>
+  
+</form>

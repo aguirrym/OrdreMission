@@ -48,7 +48,7 @@ namespace GestionDordreDeMission.API.Controllers
         [HttpPost("connecter")]
         public async Task<IActionResult> connecter(UserForLoginDto userForLoginDto)
         {
-            //cheking for user name and passeword
+        
 
              var userFromRepo = await _repo
                 .connecter(userForLoginDto.Nom.ToLower(), userForLoginDto.Motdepasse);
@@ -56,7 +56,7 @@ namespace GestionDordreDeMission.API.Controllers
             if (userFromRepo == null)
                 return Unauthorized();
 
-            var claims = new[]
+            var claims = new[] 
             {
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
                 new Claim(ClaimTypes.Name, userFromRepo.Nom)
@@ -80,13 +80,12 @@ namespace GestionDordreDeMission.API.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
+            
 
             return Ok(new {
                 token = tokenHandler.WriteToken(token)
-            });
-
-
-        }
-
-    }
+            });  
+        }   
+    }          
+           
 }
