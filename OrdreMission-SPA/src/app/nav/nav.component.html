@@ -1,41 +1,40 @@
-<nav class="navbar navbar-expand-md navbar-dark  bg-dark">
-  <a class="navbar-brand" href="#">Redlean MissionS'</a> 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+      <a class="navbar-brand" href="#">Redlean MissionS'</a> 
   
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Accueil</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="#">Employé</a>
-      </li>
-
-      <li class="nav-item">
-          <a class="nav-link " href="#">Mission</a>
+      <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Accueil</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" (click)="logout()" >Deconnecter</a>
+          <a class="nav-link " href="#">Employé</a>
+        </li>
+  
+        <li class="nav-item">
+            <a class="nav-link " href="#">Mission</a>
           </li>
-
-         </ul>
-
-         <div *ngIf="loggedIn()" class="dropdown">
-            <a class="dropdown-toggle">
-              Bienvenu utilisateur
-            </a>
           
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Modifier profile</a>
-            <div  class="class dropdown-divider"></div>       
-           <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i>Déconnecter</a>
+  
+           </ul>
+  
+           <div *ngIf="loggedIn()" class="dropdown" dropdown>
+              <a class="dropdown-toggle" dropdownToggle>
+                Bienvenu {{authService.decodedToken?.unique_name | titlecase}}
+              </a>
+            
+              <div class="dropdown-menu" *dropdownMenu>
+                <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Modifier profile</a>
+              <div  class="class dropdown-divider"  *dropdownMenu></div>       
+             <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i>Déconnecter</a>
+              </div>
             </div>
-          </div>
-
-    <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()">
-      <input class="form-control mr-sm-2" type="text" name="Nom" 
-              placeholder="Nom d'utillisateur" required [(ngModel)]="model.Nom">
-      <input class="form-control mr-sm-2" type="password" name="Motdepasse" 
-                placeholder="mot de passe" required [(ngModel)]="model.Motdepasse">
-      <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">connecter</button>
-    </form>
-
+  
+      <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()">
+        <input class="form-control mr-sm-2" type="text" name="Nom" 
+                placeholder="Nom d'utillisateur" required [(ngModel)]="model.Nom">
+        <input class="form-control mr-sm-2" type="password" name="Motdepasse" 
+                  placeholder="mot de passe" required [(ngModel)]="model.Motdepasse">
+        <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">connecter</button>
+      </form>
+  </div>
 </nav>

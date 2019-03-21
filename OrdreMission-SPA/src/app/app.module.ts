@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertifyService } from './_services/alertify.service';
 import { ErrorInterceptorProvider } from './_services/error.Interceptor';
+import { JwtModule } from '@auth0/angular-jwt';
+import { BsDropdownModule } from 'ngx-bootstrap';
+
 
 @NgModule({
    declarations: [
@@ -25,7 +28,8 @@ import { ErrorInterceptorProvider } from './_services/error.Interceptor';
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      BsDropdownModule.forRoot()
    ],
    providers: [
       AuthService,
