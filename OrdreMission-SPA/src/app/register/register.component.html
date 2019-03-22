@@ -6,12 +6,6 @@
     <input type="text" class="form-control" required name="Nom" [(ngModel)]="model.Nom" placeholder="Nom">
   </div>
 
-  <div class="form-group">
-    <label for="votreposte">Selectionnez votre poste: </label>
-    <select class="form-control" id="votreposte">
-    <option *ngFor="let employee of employeesFromHome" [value]="employee">{{employee.PostEmp}}</option>
-  </select>
-  </div>
 
   <div class="form-group text-centre">
     <input type="password" class="form-control" name="Motdepasse" [(ngModel)]="model.Motdepasse" required placeholder="mot de passe">

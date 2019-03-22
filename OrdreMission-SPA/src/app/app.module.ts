@@ -14,6 +14,11 @@ import { AlertifyService } from './_services/alertify.service';
 import { ErrorInterceptorProvider } from './_services/error.Interceptor';
 import { JwtModule } from '@auth0/angular-jwt';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { MemberListComponent } from './member-list/member-list.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+import { EmployeesRedComponent } from './employeesRed/employeesRed.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 
 @NgModule({
@@ -22,7 +27,11 @@ import { BsDropdownModule } from 'ngx-bootstrap';
       NavComponent,
       MissionComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      MemberListComponent,
+      ListsComponent,
+      MessagesComponent,
+      EmployeesRedComponent
    ],
    imports: [
       BrowserModule,
@@ -34,7 +43,8 @@ import { BsDropdownModule } from 'ngx-bootstrap';
    providers: [
       AuthService,
       ErrorInterceptorProvider,
-      AlertifyService
+      AlertifyService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent
