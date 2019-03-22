@@ -9,20 +9,20 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
 registerMode = false;
 
-employees: any;
+values: any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.getEmployees();
+    this.GetValues();
   }
 
   registerToggle() {
   this.registerMode = true;
   }
-   getEmployees() {
-    this.http.get('http://localhost:5000/api/Employees').subscribe(response => {
-     this.employees = response;
+  GetValues() {
+    this.http.get('http://localhost:5000/api/values').subscribe(response => {
+     this.values = response;
      }, error => {
     console.log(error);
     } );

@@ -11,10 +11,10 @@
     <div *ngIf="registerMode" class="container">
       <div class="row justify-content-center">
         <div class="col-4">
-          <app-register [employeesFromHome]="employees" (cancelRegister)="cancelRegisterMode($event)"></app-register>
+          <app-register [valuesFromHome]="values" (cancelRegister)="cancelRegisterMode($event)"></app-register>
         </div>
       </div>
     </div>
   </div>
-  <p *ngFor="let employee of employees">{{employees.PostEmp}}</p> 
+  <p *ngFor="let values of values">{{values.PostEmp}}</p> 
 

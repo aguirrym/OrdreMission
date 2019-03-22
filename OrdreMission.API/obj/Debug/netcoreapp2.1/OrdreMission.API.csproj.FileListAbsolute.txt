@@ -1,0 +1,14 @@
+D:\PFA\OrdreMission.API\bin\Debug\netcoreapp2.1\OrdreMission.API.deps.json
+D:\PFA\OrdreMission.API\bin\Debug\netcoreapp2.1\OrdreMission.API.runtimeconfig.json
+D:\PFA\OrdreMission.API\bin\Debug\netcoreapp2.1\OrdreMission.API.runtimeconfig.dev.json
+D:\PFA\OrdreMission.API\bin\Debug\netcoreapp2.1\OrdreMission.API.dll
+D:\PFA\OrdreMission.API\bin\Debug\netcoreapp2.1\OrdreMission.API.pdb
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.csprojAssemblyReference.cache
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.csproj.CoreCompileInputs.cache
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.RazorAssemblyInfo.cache
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.RazorAssemblyInfo.cs
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.AssemblyInfoInputs.cache
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.AssemblyInfo.cs
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.RazorTargetAssemblyInfo.cache
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.dll
+D:\PFA\OrdreMission.API\obj\Debug\netcoreapp2.1\OrdreMission.API.pdb
