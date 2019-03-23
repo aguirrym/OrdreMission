@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace OrdreMission.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190322211241_ExtendedUserClass")]
+    [Migration("20190322213928_ExtendedUserClass")]
     partial class ExtendedUserClass
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,7 +27,7 @@ namespace OrdreMission.API.Migrations
 
                     b.Property<string>("Url");
 
-                    b.Property<int?>("UserId");
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
@@ -41,21 +41,21 @@ namespace OrdreMission.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ConnuComme");
+                    b.Property<DateTime>("Created");
 
-                    b.Property<DateTime>("CreeLe");
+                    b.Property<string>("Gender");
 
-                    b.Property<DateTime>("DernierActivation");
+                    b.Property<string>("KnownAs");
+
+                    b.Property<DateTime>("LastActive");
+
+                    b.Property<string>("LookingFor");
 
                     b.Property<byte[]>("MotedepasseHash");
 
                     b.Property<byte[]>("Motedepassesalt");
 
                     b.Property<string>("Nom");
-
-                    b.Property<string>("Recherche");
-
-                    b.Property<string>("Sexe");
 
                     b.HasKey("Id");
 
@@ -76,9 +76,10 @@ namespace OrdreMission.API.Migrations
 
             modelBuilder.Entity("OrdreMission.API.Models.Photo", b =>
                 {
-                    b.HasOne("OrdreMission.API.Models.User")
+                    b.HasOne("OrdreMission.API.Models.User", "User")
                         .WithMany("Photos")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

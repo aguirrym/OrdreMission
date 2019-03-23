@@ -7,30 +7,30 @@ namespace OrdreMission.API.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "ConnuComme",
-                table: "Users",
-                nullable: true);
-
             migrationBuilder.AddColumn<DateTime>(
-                name: "CreeLe",
-                table: "Users",
-                nullable: false,
-                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
-
-            migrationBuilder.AddColumn<DateTime>(
-                name: "DernierActivation",
+                name: "Created",
                 table: "Users",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<string>(
-                name: "Recherche",
+                name: "Gender",
                 table: "Users",
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Sexe",
+                name: "KnownAs",
+                table: "Users",
+                nullable: true);
+
+            migrationBuilder.AddColumn<DateTime>(
+                name: "LastActive",
+                table: "Users",
+                nullable: false,
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+
+            migrationBuilder.AddColumn<string>(
+                name: "LookingFor",
                 table: "Users",
                 nullable: true);
 
@@ -42,7 +42,7 @@ namespace OrdreMission.API.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Url = table.Column<string>(nullable: true),
                     IsMain = table.Column<bool>(nullable: false),
-                    UserId = table.Column<int>(nullable: true)
+                    UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -52,7 +52,7 @@ namespace OrdreMission.API.Migrations
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -67,23 +67,23 @@ namespace OrdreMission.API.Migrations
                 name: "Photos");
 
             migrationBuilder.DropColumn(
-                name: "ConnuComme",
+                name: "Created",
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "CreeLe",
+                name: "Gender",
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "DernierActivation",
+                name: "KnownAs",
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Recherche",
+                name: "LastActive",
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Sexe",
+                name: "LookingFor",
                 table: "Users");
         }
     }
